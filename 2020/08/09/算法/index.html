@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Windows深度学习网络搭建 |  Hexo
+    算法 |  Hexo
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -45,7 +45,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-Windows深度学习网络搭建"
+  id="post-算法"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -56,18 +56,18 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Windows深度学习网络搭建
+  算法
 </h1>
  
 
     </header>
      
     <div class="article-meta">
-      <a href="/2020/07/25/Windows%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/" class="article-date">
-  <time datetime="2020-07-25T04:59:38.000Z" itemprop="datePublished">2020-07-25</time>
+      <a href="/2020/08/09/%E7%AE%97%E6%B3%95/" class="article-date">
+  <time datetime="2020-08-09T09:53:29.000Z" itemprop="datePublished">2020-08-09</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
   </div>
   
 <div class="word_count">
@@ -75,7 +75,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">73</span>
+            <span class="post-count">469</span>
         </span>
     </span>
 
@@ -99,10 +99,40 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h5 id="基于Win10-1660s-构建深度学习环境"><a href="#基于Win10-1660s-构建深度学习环境" class="headerlink" title="基于Win10 + 1660s 构建深度学习环境"></a>基于Win10 + 1660s 构建深度学习环境</h5><p>​    因学习需要，最近在自己的电脑上安装了深度学习环境</p>
-<h5 id="Pycharm-pytorch安装使用"><a href="#Pycharm-pytorch安装使用" class="headerlink" title="Pycharm + pytorch安装使用"></a>Pycharm + pytorch安装使用</h5><h5 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h5><p>cmd中</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate tfenv  <span class="comment"># 后面环境名称根据自己定义的来改，tfenv是我定义的名称</span></span><br></pre></td></tr></table></figure>
+  <h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><h5 id="岭回归（Ridge）"><a href="#岭回归（Ridge）" class="headerlink" title="岭回归（Ridge）"></a>岭回归（Ridge）</h5><h6 id="算法适用领域"><a href="#算法适用领域" class="headerlink" title="算法适用领域"></a>算法适用领域</h6><ul>
+<li><p>最先用来处理特征数多于样本数的情况</p>
+</li>
+<li><p>现也用于在估计中加入偏差，从而得到更好的估计</p>
+</li>
+</ul>
+<h6 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h6><ul>
+<li>这里通过引入$\lambda$ 限制了所有$\theta^2$之和，通过引入该惩罚项，减少不重要的参数（这个技术在统计学上也叫作缩减）</li>
+<li>为了防止过拟合（$\theta$过大），在目标函数$J(\theta)$后添加复杂度惩罚因子，即正则项来防止过拟合。</li>
+</ul>
+<a id="more"></a>
 
+<h5 id="简单的理解正则化："><a href="#简单的理解正则化：" class="headerlink" title="简单的理解正则化："></a>简单的理解正则化：</h5><ol>
+<li><p><strong>正则化的目的：防止过拟合</strong></p>
+<p>​        关于第1点，过拟合指的是给定一堆数据，这堆数据带有噪声，利用模型去拟合这堆数据，可能会把噪声数据也给拟合了，这点很致命，一方面会造成模型比较复杂，另一方面，模型的泛化性能太差了，遇到了新的数据让你测试，你所得到的过拟合的模型，正确率是很差的。</p>
+</li>
+<li><p><strong>正则化的本质：约束（限制）要优化的参数</strong></p>
+<p>​        关于第2点，本来解空间是全部区域，但通过正则化添加了一些约束，使得解空间变小了，甚至在个别正则化方式下，解变得稀疏了。</p>
+</li>
+</ol>
+<h5 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h5><ul>
+<li><p><em>L1-norm正则</em><br>$$<br>J\left ( \theta  \right )= \frac{1}{2}\sum_{i}^{m}\left ( y^{i} -\theta ^{T}x^{i}\right )^{2}+\lambda \sum_{j}^{n}\left | \theta _{j} \right |<br>$$</p>
+</li>
+<li><p><em>L2-norm正则</em></p>
+</li>
+</ul>
+<p>$$<br>J\left ( \theta  \right )= \frac{1}{2}\sum_{i}^{m}\left ( y^{i} -\theta ^{T}x^{i}\right )^{2}+\lambda \sum_{j}^{n} \theta _{j} ^{2}<br>$$</p>
+<ul>
+<li><em>结合L1-norm、L2-norm进行正则</em></li>
+</ul>
+<p>$$<br>J\left ( \theta  \right )= \frac{1}{2}\sum_{i}^{m}\left ( y^{i} -\theta ^{T}x^{i}\right )^{2}+\lambda(\rho\sum_{j}^{n}\left | \theta <em>{j} \right |+(1-\rho)\sum</em>{j}^{n} \theta _{j} ^{2})<br>$$</p>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
+<li><a href="https://www.biaodianfu.com/ridge-lasso-elasticnet.html" target="_blank" rel="noopener">机器学习算法之岭回归、Lasso回归和ElasticNet回归</a></li>
+</ul>
  
       <!-- reward -->
       
@@ -169,12 +199,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://mornrain.github.io/2020/07/25/Windows%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://mornrain.github.io/2020/08/09/%E7%AE%97%E6%B3%95/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
 
     </footer>
   </div>
@@ -182,15 +212,20 @@
    
   <nav class="article-nav">
     
-      <a href="/2020/07/28/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/" class="article-nav-link">
+      <a href="/2020/08/09/article/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            MySQL数据库操作
+            article
           
         </div>
       </a>
     
+    
+      <a href="/2020/08/09/%E5%B8%B8%E7%94%A8%E7%AE%80%E7%A7%B0/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">生信知识</div>
+      </a>
     
   </nav>
 

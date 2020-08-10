@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://mornrain.github.io/"/>
+  <updated>2020-08-09T11:15:49.881Z</updated>
+  <id>https://mornrain.github.io/</id>
+  
+  <author>
+    <name>Morain Yang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网站分类页面和标签页面不显示的解决办法</title>
+    <link href="https://mornrain.github.io/2020/08/09/%E7%BD%91%E7%AB%99%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2%E5%92%8C%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>https://mornrain.github.io/2020/08/09/%E7%BD%91%E7%AB%99%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2%E5%92%8C%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</id>
+    <published>2020-08-09T11:15:49.000Z</published>
+    <updated>2020-08-09T11:15:49.881Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>R语言数据处理</title>
+    <link href="https://mornrain.github.io/2020/08/09/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    <id>https://mornrain.github.io/2020/08/09/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</id>
+    <published>2020-08-09T10:23:29.000Z</published>
+    <updated>2020-08-09T10:48:55.059Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="R数据处理"><a href="#R数据处理" class="headerlink" title="R数据处理"></a>R数据处理</h4><h5 id="基本操作（默认读取到的数据以data命名）："><a href="#基本操作（默认读取到的数据以data命名）：" class="headerlink" title="基本操作（默认读取到的数据以data命名）："></a>基本操作（默认读取到的数据以data命名）：</h5><ul><li><p>names(data):    查看数据的列名</p></li><li><p>dim(data):    查看行数、列数</p></li><li><p>sum(is.na(data)):    查看缺失值总数</p></li></ul><a id="more"></a><h5 id="降维方法："><a href="#降维方法：" class="headerlink" title="降维方法："></a>降维方法：</h5><h6 id="1-线性方法：常用于保留数据的整体结构"><a href="#1-线性方法：常用于保留数据的整体结构" class="headerlink" title="1.    线性方法：常用于保留数据的整体结构"></a>1.    线性方法：常用于保留数据的整体结构</h6><p>1.1    主成分分析(Principal Component Analysis, PCA):</p><p>R语言做PCA分析有 princomp 和 pricomp 函数可以调用,不同的函数需要的数据格式也不相同。<strong>pricomp</strong>函数只能针对<strong>全数据模型</strong>有效。</p><table><thead><tr><th>二者不同点</th><th align="center">princomp</th><th>prcomp</th></tr></thead><tbody><tr><td>mode</td><td align="center">R-mode</td><td>Q-mode</td></tr><tr><td>基于算法</td><td align="center">基于协方差或者相关矩阵提取的特征值</td><td>基于奇异值分解</td></tr></tbody></table><p>R-mode简单来说就是数据数量要大于变量（因素）数量；而Q-mode正与其相反，简单来讲就是变量数量要多于数据数量。</p><p>1.2    对应分析(Correspondence Analysis, CA)</p><p>1.3    多重对应分析(Multiple Correspondence Analysis, MCA)</p><p>1.4    经典多维尺度分析(classical multidimensional scaling, cMDS)也被称为主坐标分析(Principal Coordinate Analysis, PCoA) </p><h6 id="2-非线性方法：更适合表达数据局部的相互作用关系"><a href="#2-非线性方法：更适合表达数据局部的相互作用关系" class="headerlink" title="2.    非线性方法：更适合表达数据局部的相互作用关系"></a>2.    非线性方法：更适合表达数据局部的相互作用关系</h6><p>2.1    核主成分分析(Kernel Principal Component Analysis, Kernel PCA)</p><p>2.2    非度量多维尺度分析(Nonmetric Multidimensional Scaling, NMDS)</p><p>2.3    等度量映射(Isomap)</p><p>2.4    扩散映射(Diffusion Maps)</p><p>2.5    一些包括t分布随机嵌入(t-Distributed Stochastic Neighbor Embedding, t-SNE)在内的邻近嵌入技术</p><h6 id="3-监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）"><a href="#3-监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）" class="headerlink" title="3.    监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）"></a>3.    监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）</h6><p>3.1    偏最小二乘法(Partial Least Squares, PLS)</p><p>3.2    线性判别分析(Linear Discriminant Analysis, LDA)</p><p>3.3    近邻成分分析(Neighborhood Component Analysis)</p><p>3.4    Bottleneck神经网络分类器</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;R数据处理&quot;&gt;&lt;a href=&quot;#R数据处理&quot; class=&quot;headerlink&quot; title=&quot;R数据处理&quot;&gt;&lt;/a&gt;R数据处理&lt;/h4&gt;&lt;h5 id=&quot;基本操作（默认读取到的数据以data命名）：&quot;&gt;&lt;a href=&quot;#基本操作（默认读取到的数据以data命名）：&quot; class=&quot;headerlink&quot; title=&quot;基本操作（默认读取到的数据以data命名）：&quot;&gt;&lt;/a&gt;基本操作（默认读取到的数据以data命名）：&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;names(data):    查看数据的列名&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;dim(data):    查看行数、列数&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;sum(is.na(data)):    查看缺失值总数&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="R" scheme="https://mornrain.github.io/categories/R/"/>
+    
+    
+      <category term="生信" scheme="https://mornrain.github.io/tags/%E7%94%9F%E4%BF%A1/"/>
+    
+      <category term="R" scheme="https://mornrain.github.io/tags/R/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>article</title>
+    <link href="https://mornrain.github.io/2020/08/09/article/"/>
+    <id>https://mornrain.github.io/2020/08/09/article/</id>
+    <published>2020-08-09T09:59:17.000Z</published>
+    <updated>2020-08-09T10:39:16.969Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="ces"><a href="#ces" class="headerlink" title="ces"></a>ces</h3><p>sadwa </p><p>怎</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;ces&quot;&gt;&lt;a href=&quot;#ces&quot; class=&quot;headerlink&quot; title=&quot;ces&quot;&gt;&lt;/a&gt;ces&lt;/h3&gt;&lt;p&gt;sadwa &lt;/p&gt;
+&lt;p&gt;怎&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="-ceshiji" scheme="https://mornrain.github.io/categories/ceshiji/"/>
+    
+    
+      <category term="-ceshi" scheme="https://mornrain.github.io/tags/ceshi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法</title>
+    <link href="https://mornrain.github.io/2020/08/09/%E7%AE%97%E6%B3%95/"/>
+    <id>https://mornrain.github.io/2020/08/09/%E7%AE%97%E6%B3%95/</id>
+    <published>2020-08-09T09:53:29.000Z</published>
+    <updated>2020-08-09T10:48:14.554Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><h5 id="岭回归（Ridge）"><a href="#岭回归（Ridge）" class="headerlink" title="岭回归（Ridge）"></a>岭回归（Ridge）</h5><h6 id="算法适用领域"><a href="#算法适用领域" class="headerlink" title="算法适用领域"></a>算法适用领域</h6><ul><li><p>最先用来处理特征数多于样本数的情况</p></li><li><p>现也用于在估计中加入偏差，从而得到更好的估计</p></li></ul><h6 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h6><ul><li>这里通过引入$\lambda$ 限制了所有$\theta^2$之和，通过引入该惩罚项，减少不重要的参数（这个技术在统计学上也叫作缩减）</li><li>为了防止过拟合（$\theta$过大），在目标函数$J(\theta)$后添加复杂度惩罚因子，即正则项来防止过拟合。</li></ul><a id="more"></a><h5 id="简单的理解正则化："><a href="#简单的理解正则化：" class="headerlink" title="简单的理解正则化："></a>简单的理解正则化：</h5><ol><li><p><strong>正则化的目的：防止过拟合</strong></p><p>​        关于第1点，过拟合指的是给定一堆数据，这堆数据带有噪声，利用模型去拟合这堆数据，可能会把噪声数据也给拟合了，这点很致命，一方面会造成模型比较复杂，另一方面，模型的泛化性能太差了，遇到了新的数据让你测试，你所得到的过拟合的模型，正确率是很差的。</p></li><li><p><strong>正则化的本质：约束（限制）要优化的参数</strong></p><p>​        关于第2点，本来解空间是全部区域，但通过正则化添加了一些约束，使得解空间变小了，甚至在个别正则化方式下，解变得稀疏了。</p></li></ol><h5 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h5><ul><li><p><em>L1-norm正则</em><br>$$<br>J\left ( \theta  \right )= \frac{1}{2}\sum_{i}^{m}\left ( y^{i} -\theta ^{T}x^{i}\right )^{2}+\lambda \sum_{j}^{n}\left | \theta _{j} \right |<br>$$</p></li><li><p><em>L2-norm正则</em></p></li></ul><p>$$<br>J\left ( \theta  \right )= \frac{1}{2}\sum_{i}^{m}\left ( y^{i} -\theta ^{T}x^{i}\right )^{2}+\lambda \sum_{j}^{n} \theta _{j} ^{2}<br>$$</p><ul><li><em>结合L1-norm、L2-norm进行正则</em></li></ul><p>$$<br>J\left ( \theta  \right )= \frac{1}{2}\sum_{i}^{m}\left ( y^{i} -\theta ^{T}x^{i}\right )^{2}+\lambda(\rho\sum_{j}^{n}\left | \theta <em>{j} \right |+(1-\rho)\sum</em>{j}^{n} \theta _{j} ^{2})<br>$$</p><h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ul><li><a href="https://www.biaodianfu.com/ridge-lasso-elasticnet.html" target="_blank" rel="noopener">机器学习算法之岭回归、Lasso回归和ElasticNet回归</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;算法&quot;&gt;&lt;a href=&quot;#算法&quot; class=&quot;headerlink&quot; title=&quot;算法&quot;&gt;&lt;/a&gt;算法&lt;/h4&gt;&lt;h5 id=&quot;岭回归（Ridge）&quot;&gt;&lt;a href=&quot;#岭回归（Ridge）&quot; class=&quot;headerlink&quot; title=&quot;岭回归（Ridge）&quot;&gt;&lt;/a&gt;岭回归（Ridge）&lt;/h5&gt;&lt;h6 id=&quot;算法适用领域&quot;&gt;&lt;a href=&quot;#算法适用领域&quot; class=&quot;headerlink&quot; title=&quot;算法适用领域&quot;&gt;&lt;/a&gt;算法适用领域&lt;/h6&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;最先用来处理特征数多于样本数的情况&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;现也用于在估计中加入偏差，从而得到更好的估计&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&quot;算法原理&quot;&gt;&lt;a href=&quot;#算法原理&quot; class=&quot;headerlink&quot; title=&quot;算法原理&quot;&gt;&lt;/a&gt;算法原理&lt;/h6&gt;&lt;ul&gt;
+&lt;li&gt;这里通过引入$\lambda$ 限制了所有$\theta^2$之和，通过引入该惩罚项，减少不重要的参数（这个技术在统计学上也叫作缩减）&lt;/li&gt;
+&lt;li&gt;为了防止过拟合（$\theta$过大），在目标函数$J(\theta)$后添加复杂度惩罚因子，即正则项来防止过拟合。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="https://mornrain.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://mornrain.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>生信知识</title>
+    <link href="https://mornrain.github.io/2020/08/09/%E5%B8%B8%E7%94%A8%E7%AE%80%E7%A7%B0/"/>
+    <id>https://mornrain.github.io/2020/08/09/%E5%B8%B8%E7%94%A8%E7%AE%80%E7%A7%B0/</id>
+    <published>2020-08-09T09:53:29.000Z</published>
+    <updated>2020-08-09T10:49:21.538Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="常用简称"><a href="#常用简称" class="headerlink" title="常用简称"></a>常用简称</h4><h5 id="一-数据分析-降维方法"><a href="#一-数据分析-降维方法" class="headerlink" title="一. 数据分析-降维方法"></a>一. 数据分析-降维方法</h5><h6 id="1-1-保留数据的整体结构的线性方法"><a href="#1-1-保留数据的整体结构的线性方法" class="headerlink" title="1.1 保留数据的整体结构的线性方法"></a>1.1 保留数据的整体结构的线性方法</h6><ul><li>PCA：Principal Component Analysis    主成分分析</li><li>CA</li><li>MCA</li><li>cMDS</li></ul><h5 id="生物信息学"><a href="#生物信息学" class="headerlink" title="生物信息学"></a>生物信息学</h5><ul><li><p>CNV：    copy number variation        拷贝数变异</p></li><li><p>SNP：    Single Nucleotide Polymorphism        单核苷酸多态性</p></li><li><p>COAD:        Colon adenocarcinoa        结肠癌</p></li><li><p>READ:        Rectum adenocarcinoa        直肠癌</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;常用简称&quot;&gt;&lt;a href=&quot;#常用简称&quot; class=&quot;headerlink&quot; title=&quot;常用简称&quot;&gt;&lt;/a&gt;常用简称&lt;/h4&gt;&lt;h5 id=&quot;一-数据分析-降维方法&quot;&gt;&lt;a href=&quot;#一-数据分析-降维方法&quot; class=&quot;headerlink&quot; ti
+      
+    
+    </summary>
+    
+    
+      <category term="生信" scheme="https://mornrain.github.io/categories/%E7%94%9F%E4%BF%A1/"/>
+    
+    
+      <category term="生信" scheme="https://mornrain.github.io/tags/%E7%94%9F%E4%BF%A1/"/>
+    
+      <category term="基本知识" scheme="https://mornrain.github.io/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pytorch学习</title>
+    <link href="https://mornrain.github.io/2020/08/09/Pytorch%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://mornrain.github.io/2020/08/09/Pytorch%E5%AD%A6%E4%B9%A0/</id>
+    <published>2020-08-09T09:53:29.000Z</published>
+    <updated>2020-08-09T10:49:50.021Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Pytorch学习"><a href="#Pytorch学习" class="headerlink" title="Pytorch学习"></a>Pytorch学习</h1><h5 id="A-typical-training-procedure-for-a-neural-network-is-as-follows-神经网络的典型训练过程如下"><a href="#A-typical-training-procedure-for-a-neural-network-is-as-follows-神经网络的典型训练过程如下" class="headerlink" title="A typical training procedure for a neural network is as follows(神经网络的典型训练过程如下)"></a>A typical training procedure for a neural network is as follows(神经网络的典型训练过程如下)</h5><ul><li>Define the neural network that has some learnable parameters (or weights)</li><li>Iterate over a dataset of inputs</li><li>Process input through the network</li><li>Compute the loss (how far is the output from being correct)</li><li>Propagate gradients back into the network’s parameters</li><li>Update the weights of the network, typically using a simple update rule: <code>weight = weight - learning_rate * gradient</code></li></ul><a id="more"></a><h5 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h5><ul><li>.data:    获得该结点的值，即Tensor类型的值</li><li>.grad:    获得该节点处的梯度信息</li><li>grad_fn:    值可以得知该变量是不是一个函数的输出值。若是，则返回一个与该函数相关的对象，否则是None。</li></ul><h5 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h5><ul><li>requires_grad:    有 True 和 Flase ，True代表此变量处需要计算梯度，Flase代表不需要；默认为Flase。</li></ul><h4 id="1、6种优化方法介绍"><a href="#1、6种优化方法介绍" class="headerlink" title="1、6种优化方法介绍"></a>1、6种优化方法介绍</h4><h5 id="1-1-SGD-stochastic-gradient-descent"><a href="#1-1-SGD-stochastic-gradient-descent" class="headerlink" title="1.1 SGD(stochastic gradient descent)"></a>1.1 SGD(stochastic gradient descent)</h5><h5 id="1-2-SGD-Momentum"><a href="#1-2-SGD-Momentum" class="headerlink" title="1.2 SGD+Momentum"></a>1.2 SGD+Momentum</h5><h5 id="1-3-Nesterov-Momentum"><a href="#1-3-Nesterov-Momentum" class="headerlink" title="1.3 Nesterov Momentum"></a>1.3 Nesterov Momentum</h5><h5 id="1-4-AdaGrad"><a href="#1-4-AdaGrad" class="headerlink" title="1.4 AdaGrad"></a>1.4 AdaGrad</h5><h5 id="1-5-RMSProp"><a href="#1-5-RMSProp" class="headerlink" title="1.5 RMSProp"></a>1.5 RMSProp</h5><h5 id="1-6Adam"><a href="#1-6Adam" class="headerlink" title="1.6Adam"></a>1.6Adam</h5><h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><ul><li><a href="https://zhuanlan.zhihu.com/p/62585696" target="_blank" rel="noopener">PyTorch学习之6种优化方法介绍</a></li></ul><h4 id="参考资料-1"><a href="#参考资料-1" class="headerlink" title="参考资料"></a>参考资料</h4><ul><li><a href="https://www.zhihu.com/people/lao-zhong-69-64/posts" target="_blank" rel="noopener">Pytorch基础教程之线性回归和逻辑回归（附源码）</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Pytorch学习&quot;&gt;&lt;a href=&quot;#Pytorch学习&quot; class=&quot;headerlink&quot; title=&quot;Pytorch学习&quot;&gt;&lt;/a&gt;Pytorch学习&lt;/h1&gt;&lt;h5 id=&quot;A-typical-training-procedure-for-a-neural-network-is-as-follows-神经网络的典型训练过程如下&quot;&gt;&lt;a href=&quot;#A-typical-training-procedure-for-a-neural-network-is-as-follows-神经网络的典型训练过程如下&quot; class=&quot;headerlink&quot; title=&quot;A typical training procedure for a neural network is as follows(神经网络的典型训练过程如下)&quot;&gt;&lt;/a&gt;A typical training procedure for a neural network is as follows(神经网络的典型训练过程如下)&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;Define the neural network that has some learnable parameters (or weights)&lt;/li&gt;
+&lt;li&gt;Iterate over a dataset of inputs&lt;/li&gt;
+&lt;li&gt;Process input through the network&lt;/li&gt;
+&lt;li&gt;Compute the loss (how far is the output from being correct)&lt;/li&gt;
+&lt;li&gt;Propagate gradients back into the network’s parameters&lt;/li&gt;
+&lt;li&gt;Update the weights of the network, typically using a simple update rule: &lt;code&gt;weight = weight - learning_rate * gradient&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="https://mornrain.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Pytorch" scheme="https://mornrain.github.io/tags/Pytorch/"/>
+    
+      <category term="机器学习" scheme="https://mornrain.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux常用指令</title>
+    <link href="https://mornrain.github.io/2020/08/09/Linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
+    <id>https://mornrain.github.io/2020/08/09/Linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</id>
+    <published>2020-08-09T09:53:29.000Z</published>
+    <updated>2020-08-09T10:50:06.191Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="Linux常用指令"><a href="#Linux常用指令" class="headerlink" title="Linux常用指令"></a>Linux常用指令</h4><ul><li>.zip 解压指令</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jar xvf filename.zip</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;Linux常用指令&quot;&gt;&lt;a href=&quot;#Linux常用指令&quot; class=&quot;headerlink&quot; title=&quot;Linux常用指令&quot;&gt;&lt;/a&gt;Linux常用指令&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;.zip 解压指令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://mornrain.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://mornrain.github.io/tags/Linux/"/>
+    
+      <category term="指令" scheme="https://mornrain.github.io/tags/%E6%8C%87%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TCGA数据类型</title>
+    <link href="https://mornrain.github.io/2020/07/31/TCGA%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>https://mornrain.github.io/2020/07/31/TCGA%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</id>
+    <published>2020-07-31T09:57:18.670Z</published>
+    <updated>2020-07-31T11:16:36.494Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="TCGA数据类型"><a href="#TCGA数据类型" class="headerlink" title="TCGA数据类型"></a>TCGA数据类型</h5><h6 id="1-临床数据"><a href="#1-临床数据" class="headerlink" title="1. 临床数据"></a>1. 临床数据</h6><p>存储方式为XML格式。</p><h6 id="2-表达数据"><a href="#2-表达数据" class="headerlink" title="2. 表达数据"></a>2. 表达数据</h6><p>表单数据分三种（FPKM、FPKM-UQ、counts）,表达数据的格式为首列为基因id，第二列为表达值。</p><h6 id="3-甲基化数据"><a href="#3-甲基化数据" class="headerlink" title="3. 甲基化数据"></a>3. 甲基化数据</h6><p>甲基化原始数据包含11列信息，第一列为甲基化位点id，第二列为beta value（甲基化程度），第3列至第11列均为该位点的注释信息。</p><h6 id="4-microRNA数据"><a href="#4-microRNA数据" class="headerlink" title="4.microRNA数据"></a>4.microRNA数据</h6><p>microRNA表达原始数据分为4列，第1列为miRNA id，第2列和第3列分别表示为原始数据和标准化后的reads个数。第4列表示为该miRNA在比对时是否为交叉比对。</p><h6 id="5-SNP数据"><a href="#5-SNP数据" class="headerlink" title="5.SNP数据"></a>5.SNP数据</h6><p>SNV数据并不是按照不同样本分开存放，整张表格记录了该种疾病所有成对样本经计算后得到的SNV信息。</p><h5 id="TCGA数据库中英文对照表"><a href="#TCGA数据库中英文对照表" class="headerlink" title="TCGA数据库中英文对照表"></a>TCGA数据库中英文对照表</h5><table><thead><tr><th>TCGA-LAML</th><th>Acute Myeloid Leukemia</th><th>急性髓性白血病</th></tr></thead><tbody><tr><td>TCGA-ACC</td><td>Adrenocortical carcinoma</td><td>肾上腺皮质癌</td></tr><tr><td>TCGA-BLCA</td><td>Bladder Urothelial Carcinoma</td><td>膀胱尿路上皮癌</td></tr><tr><td>TCGA-LGG</td><td>Brain Lower Grade Glioma</td><td>脑低级脑胶质瘤</td></tr><tr><td>TCGA-BRCA</td><td>Breast invasive carcinoma</td><td>乳腺浸润癌</td></tr><tr><td>TCGA-CESC</td><td>Cervical squamous cell carcinoma and endocervical adenocarcinoma</td><td>宫颈鳞状细胞癌和宫颈内膜腺癌</td></tr><tr><td>TCGA-CHOL</td><td>Cholangiocarcinoma</td><td>胆管癌</td></tr><tr><td>TCGA-LCML</td><td>Chronic Myelogenous Leukemia</td><td>慢性粒细胞性白血病</td></tr><tr><td>TCGA-COAD</td><td>Colon adenocarcinoma</td><td>结肠腺癌</td></tr><tr><td>TCGA-ESCA</td><td>Esophageal carcinoma</td><td>食道癌</td></tr><tr><td>TCGA-GBM</td><td>Glioblastoma multiforme</td><td>胶质母细胞瘤</td></tr><tr><td>TCGA-HNSC</td><td>Head and Neck squamous cell carcinoma</td><td>头颈部鳞状细胞癌</td></tr><tr><td>TCGA-KICH</td><td>Kidney Chromophobe</td><td>肾染色体</td></tr><tr><td>TCGA-KIRC</td><td>Kidney renal clear cell carcinoma</td><td>肾脏肾透明细胞癌</td></tr><tr><td>TCGA-KIRP</td><td>Kidney renal papillary cell carcinoma</td><td>肾肾乳头状细胞癌</td></tr><tr><td>TCGA-LIHC</td><td>Liver hepatocellular carcinoma</td><td>肝肝细胞癌</td></tr><tr><td>TCGA-LUAD</td><td>Lung adenocarcinoma</td><td>肺腺癌</td></tr><tr><td>TCGA-LUSC</td><td>Lung squamous cell carcinoma</td><td>肺鳞状细胞癌</td></tr><tr><td>TCGA-DLBC</td><td>Lymphoid Neoplasm Diffuse Large B-cell Lymphoma</td><td>淋巴样肿瘤弥漫性大B细胞淋巴瘤</td></tr><tr><td>TCGA-MESO</td><td>Mesothelioma</td><td>间皮瘤</td></tr><tr><td>TCGA-OV</td><td>Ovarian serous cystadenocarcinoma</td><td>卵巢浆液性囊腺癌</td></tr><tr><td>TCGA-PAAD</td><td>Pancreatic adenocarcinoma</td><td>胰腺腺癌</td></tr><tr><td>TCGA-PCPG</td><td>Pheochromocytoma and Paraganglioma</td><td>嗜铬细胞瘤和副神经节瘤</td></tr><tr><td>TCGA-PRAD</td><td>Prostate adenocarcinoma</td><td>前列腺腺癌</td></tr><tr><td>TCGA-READ</td><td>Rectum adenocarcinoma</td><td>直肠腺癌</td></tr><tr><td>TCGA-SARC</td><td>Sarcoma</td><td>肉瘤</td></tr><tr><td>TCGA-SKCM</td><td>Skin Cutaneous Melanoma</td><td>皮肤皮肤黑色素瘤</td></tr><tr><td>TCGA-STAD</td><td>Stomach adenocarcinoma</td><td>胃腺癌</td></tr><tr><td>TCGA-TGCT</td><td>Testicular Germ Cell Tumors</td><td>睾丸生殖细胞肿瘤</td></tr><tr><td>TCGA-THYM</td><td>Thymoma</td><td>胸腺瘤</td></tr><tr><td>TCGA-THCA</td><td>Thyroid carcinoma</td><td>甲状腺癌</td></tr><tr><td>TCGA-UCS</td><td>Uterine Carcinosarcoma</td><td>子宫癌肉瘤</td></tr><tr><td>TCGA-UCEC</td><td>Uterine Corpus Endometrial Carcinoma</td><td>子宫体子宫内膜癌</td></tr><tr><td>TCGA-UVM</td><td>Uveal Melanoma</td><td>葡萄膜黑色素瘤</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;TCGA数据类型&quot;&gt;&lt;a href=&quot;#TCGA数据类型&quot; class=&quot;headerlink&quot; title=&quot;TCGA数据类型&quot;&gt;&lt;/a&gt;TCGA数据类型&lt;/h5&gt;&lt;h6 id=&quot;1-临床数据&quot;&gt;&lt;a href=&quot;#1-临床数据&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL数据库操作</title>
+    <link href="https://mornrain.github.io/2020/07/28/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/"/>
+    <id>https://mornrain.github.io/2020/07/28/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</id>
+    <published>2020-07-28T08:32:02.917Z</published>
+    <updated>2020-07-29T08:22:53.666Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="MySQL数据库操作"><a href="#MySQL数据库操作" class="headerlink" title="MySQL数据库操作"></a>MySQL数据库操作</h1><h5 id="一-将EXCEL表中的数据导入MySQL数据库中"><a href="#一-将EXCEL表中的数据导入MySQL数据库中" class="headerlink" title="一.  将EXCEL表中的数据导入MySQL数据库中"></a>一.  将EXCEL表中的数据导入MySQL数据库中</h5><ol><li><p>将EXCEL中的数据另存为制表符分隔的文本文件</p><p><img src="../../public/images/1.jpg" alt="image-20200728162915703"></p></li><li><p>使用 load data infile … into table … 语句将数据导入到mysql中</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LOAD DATA INFILE &quot;G:&#x2F;temp&#x2F;info.sum2.txt&quot; INTO TABLE info FIELDS TERMINATED BY &quot;\t&quot; LINES TERMINATED BY &quot;\r\n&quot;#info 是我要导入数据库中的表名</span><br></pre></td></tr></table></figure><p>参数说明，其中：</p><p> fields terminated by ‘\t’ ：表示使用tab制表符作为字段分隔符；</p><p> lines terminated by’\r\n’ ：表示使用回车换行符作为行分隔符，这是由于windows下文件通常以换行并回车作为文件行的结尾.</p><ol start="3"><li>完成</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;MySQL数据库操作&quot;&gt;&lt;a href=&quot;#MySQL数据库操作&quot; class=&quot;headerlink&quot; title=&quot;MySQL数据库操作&quot;&gt;&lt;/a&gt;MySQL数据库操作&lt;/h1&gt;&lt;h5 id=&quot;一-将EXCEL表中的数据导入MySQL数据库中&quot;&gt;&lt;a href
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Windows深度学习网络搭建</title>
+    <link href="https://mornrain.github.io/2020/07/25/Windows%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/"/>
+    <id>https://mornrain.github.io/2020/07/25/Windows%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/</id>
+    <published>2020-07-25T04:59:38.000Z</published>
+    <updated>2020-08-09T10:46:21.896Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="基于Win10-1660s-构建深度学习环境"><a href="#基于Win10-1660s-构建深度学习环境" class="headerlink" title="基于Win10 + 1660s 构建深度学习环境"></a>基于Win10 + 1660s 构建深度学习环境</h5><p>​    因学习需要，最近在自己的电脑上安装了深度学习环境</p><h5 id="Pycharm-pytorch安装使用"><a href="#Pycharm-pytorch安装使用" class="headerlink" title="Pycharm + pytorch安装使用"></a>Pycharm + pytorch安装使用</h5><h5 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h5><p>cmd中</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate tfenv  <span class="comment"># 后面环境名称根据自己定义的来改，tfenv是我定义的名称</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;基于Win10-1660s-构建深度学习环境&quot;&gt;&lt;a href=&quot;#基于Win10-1660s-构建深度学习环境&quot; class=&quot;headerlink&quot; title=&quot;基于Win10 + 1660s 构建深度学习环境&quot;&gt;&lt;/a&gt;基于Win10 + 1660s 构建
+      
+    
+    </summary>
+    
+    
+      <category term="深度学习" scheme="https://mornrain.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="深度学习" scheme="https://mornrain.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+</feed>

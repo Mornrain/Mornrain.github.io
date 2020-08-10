@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Windows深度学习网络搭建 |  Hexo
+    Pytorch学习 |  Hexo
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -45,7 +45,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-Windows深度学习网络搭建"
+  id="post-Pytorch学习"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -56,18 +56,18 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Windows深度学习网络搭建
+  Pytorch学习
 </h1>
  
 
     </header>
      
     <div class="article-meta">
-      <a href="/2020/07/25/Windows%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/" class="article-date">
-  <time datetime="2020-07-25T04:59:38.000Z" itemprop="datePublished">2020-07-25</time>
+      <a href="/2020/08/09/Pytorch%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time datetime="2020-08-09T09:53:29.000Z" itemprop="datePublished">2020-08-09</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
+    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
   </div>
   
 <div class="word_count">
@@ -75,7 +75,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">73</span>
+            <span class="post-count">248</span>
         </span>
     </span>
 
@@ -99,10 +99,30 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h5 id="基于Win10-1660s-构建深度学习环境"><a href="#基于Win10-1660s-构建深度学习环境" class="headerlink" title="基于Win10 + 1660s 构建深度学习环境"></a>基于Win10 + 1660s 构建深度学习环境</h5><p>​    因学习需要，最近在自己的电脑上安装了深度学习环境</p>
-<h5 id="Pycharm-pytorch安装使用"><a href="#Pycharm-pytorch安装使用" class="headerlink" title="Pycharm + pytorch安装使用"></a>Pycharm + pytorch安装使用</h5><h5 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h5><p>cmd中</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate tfenv  <span class="comment"># 后面环境名称根据自己定义的来改，tfenv是我定义的名称</span></span><br></pre></td></tr></table></figure>
+  <h1 id="Pytorch学习"><a href="#Pytorch学习" class="headerlink" title="Pytorch学习"></a>Pytorch学习</h1><h5 id="A-typical-training-procedure-for-a-neural-network-is-as-follows-神经网络的典型训练过程如下"><a href="#A-typical-training-procedure-for-a-neural-network-is-as-follows-神经网络的典型训练过程如下" class="headerlink" title="A typical training procedure for a neural network is as follows(神经网络的典型训练过程如下)"></a>A typical training procedure for a neural network is as follows(神经网络的典型训练过程如下)</h5><ul>
+<li>Define the neural network that has some learnable parameters (or weights)</li>
+<li>Iterate over a dataset of inputs</li>
+<li>Process input through the network</li>
+<li>Compute the loss (how far is the output from being correct)</li>
+<li>Propagate gradients back into the network’s parameters</li>
+<li>Update the weights of the network, typically using a simple update rule: <code>weight = weight - learning_rate * gradient</code></li>
+</ul>
+<a id="more"></a>
 
+<h5 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h5><ul>
+<li>.data:    获得该结点的值，即Tensor类型的值</li>
+<li>.grad:    获得该节点处的梯度信息</li>
+<li>grad_fn:    值可以得知该变量是不是一个函数的输出值。若是，则返回一个与该函数相关的对象，否则是None。</li>
+</ul>
+<h5 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h5><ul>
+<li>requires_grad:    有 True 和 Flase ，True代表此变量处需要计算梯度，Flase代表不需要；默认为Flase。</li>
+</ul>
+<h4 id="1、6种优化方法介绍"><a href="#1、6种优化方法介绍" class="headerlink" title="1、6种优化方法介绍"></a>1、6种优化方法介绍</h4><h5 id="1-1-SGD-stochastic-gradient-descent"><a href="#1-1-SGD-stochastic-gradient-descent" class="headerlink" title="1.1 SGD(stochastic gradient descent)"></a>1.1 SGD(stochastic gradient descent)</h5><h5 id="1-2-SGD-Momentum"><a href="#1-2-SGD-Momentum" class="headerlink" title="1.2 SGD+Momentum"></a>1.2 SGD+Momentum</h5><h5 id="1-3-Nesterov-Momentum"><a href="#1-3-Nesterov-Momentum" class="headerlink" title="1.3 Nesterov Momentum"></a>1.3 Nesterov Momentum</h5><h5 id="1-4-AdaGrad"><a href="#1-4-AdaGrad" class="headerlink" title="1.4 AdaGrad"></a>1.4 AdaGrad</h5><h5 id="1-5-RMSProp"><a href="#1-5-RMSProp" class="headerlink" title="1.5 RMSProp"></a>1.5 RMSProp</h5><h5 id="1-6Adam"><a href="#1-6Adam" class="headerlink" title="1.6Adam"></a>1.6Adam</h5><h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/62585696" target="_blank" rel="noopener">PyTorch学习之6种优化方法介绍</a></li>
+</ul>
+<h4 id="参考资料-1"><a href="#参考资料-1" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
+<li><a href="https://www.zhihu.com/people/lao-zhong-69-64/posts" target="_blank" rel="noopener">Pytorch基础教程之线性回归和逻辑回归（附源码）</a></li>
+</ul>
  
       <!-- reward -->
       
@@ -169,12 +189,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://mornrain.github.io/2020/07/25/Windows%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://mornrain.github.io/2020/08/09/Pytorch%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pytorch/" rel="tag">Pytorch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
 
     </footer>
   </div>
@@ -182,15 +202,20 @@
    
   <nav class="article-nav">
     
-      <a href="/2020/07/28/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/" class="article-nav-link">
+      <a href="/2020/08/09/%E5%B8%B8%E7%94%A8%E7%AE%80%E7%A7%B0/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            MySQL数据库操作
+            生信知识
           
         </div>
       </a>
     
+    
+      <a href="/2020/08/09/Linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Linux常用指令</div>
+      </a>
     
   </nav>
 

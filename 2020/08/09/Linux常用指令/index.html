@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    数据处理 |  Hexo
+    Linux常用指令 |  Hexo
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -33,6 +33,7 @@
 
   
 
+<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
 
 </html>
@@ -44,7 +45,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-数据处理"
+  id="post-Linux常用指令"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -55,22 +56,26 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  数据处理
+  Linux常用指令
 </h1>
  
 
     </header>
      
     <div class="article-meta">
-      <a href="/2020/08/06/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" class="article-date">
-  <time datetime="2020-08-06T02:40:19.282Z" itemprop="datePublished">2020-08-06</time>
-</a>   
+      <a href="/2020/08/09/Linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="article-date">
+  <time datetime="2020-08-09T09:53:29.000Z" itemprop="datePublished">2020-08-09</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+  
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">455</span>
+            <span class="post-count">14</span>
         </span>
     </span>
 
@@ -94,45 +99,11 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h4 id="R数据处理"><a href="#R数据处理" class="headerlink" title="R数据处理"></a>R数据处理</h4><h5 id="基本操作（默认读取到的数据以data命名）："><a href="#基本操作（默认读取到的数据以data命名）：" class="headerlink" title="基本操作（默认读取到的数据以data命名）："></a>基本操作（默认读取到的数据以data命名）：</h5><ul>
-<li>names(data):    查看数据的列名</li>
-<li>dim(data):    查看行数、列数</li>
-<li>sum(is.na(data)):    查看缺失值总数</li>
+  <h4 id="Linux常用指令"><a href="#Linux常用指令" class="headerlink" title="Linux常用指令"></a>Linux常用指令</h4><ul>
+<li>.zip 解压指令</li>
 </ul>
-<h5 id="降维方法："><a href="#降维方法：" class="headerlink" title="降维方法："></a>降维方法：</h5><h6 id="1-线性方法：常用于保留数据的整体结构"><a href="#1-线性方法：常用于保留数据的整体结构" class="headerlink" title="1.    线性方法：常用于保留数据的整体结构"></a>1.    线性方法：常用于保留数据的整体结构</h6><p>1.1    主成分分析(Principal Component Analysis, PCA):</p>
-<p>R语言做PCA分析有 princomp 和 pricomp 函数可以调用,不同的函数需要的数据格式也不相同。<strong>pricomp</strong>函数只能针对<strong>全数据模型</strong>有效。</p>
-<table>
-<thead>
-<tr>
-<th>二者不同点</th>
-<th align="center">princomp</th>
-<th>prcomp</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>mode</td>
-<td align="center">R-mode</td>
-<td>Q-mode</td>
-</tr>
-<tr>
-<td>基于算法</td>
-<td align="center">基于协方差或者相关矩阵提取的特征值</td>
-<td>基于奇异值分解</td>
-</tr>
-</tbody></table>
-<p>R-mode简单来说就是数据数量要大于变量（因素）数量；而Q-mode正与其相反，简单来讲就是变量数量要多于数据数量。</p>
-<p>1.2    对应分析(Correspondence Analysis, CA)</p>
-<p>1.3    多重对应分析(Multiple Correspondence Analysis, MCA)</p>
-<p>1.4    经典多维尺度分析(classical multidimensional scaling, cMDS)也被称为主坐标分析(Principal Coordinate Analysis, PCoA) </p>
-<h6 id="2-非线性方法：更适合表达数据局部的相互作用关系"><a href="#2-非线性方法：更适合表达数据局部的相互作用关系" class="headerlink" title="2.    非线性方法：更适合表达数据局部的相互作用关系"></a>2.    非线性方法：更适合表达数据局部的相互作用关系</h6><p>2.1    核主成分分析(Kernel Principal Component Analysis, Kernel PCA)</p>
-<p>2.2    非度量多维尺度分析(Nonmetric Multidimensional Scaling, NMDS)</p>
-<p>2.3    等度量映射(Isomap)</p>
-<p>2.4    扩散映射(Diffusion Maps)</p>
-<p>2.5    一些包括t分布随机嵌入(t-Distributed Stochastic Neighbor Embedding, t-SNE)在内的邻近嵌入技术</p>
-<h6 id="3-监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）"><a href="#3-监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）" class="headerlink" title="3.    监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）"></a>3.    监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）</h6><p>3.1    偏最小二乘法(Partial Least Squares, PLS)</p>
-<p>3.2    线性判别分析(Linear Discriminant Analysis, LDA)</p>
-<p>3.3    近邻成分分析(Neighborhood Component Analysis)</p>
-<p>3.4    Bottleneck神经网络分类器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jar xvf filename.zip</span><br></pre></td></tr></table></figure>
+
  
       <!-- reward -->
       
@@ -199,30 +170,32 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://mornrain.github.io/2020/08/06/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://mornrain.github.io/2020/08/09/Linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8C%87%E4%BB%A4/" rel="tag">指令</a></li></ul>
+
     </footer>
   </div>
 
    
   <nav class="article-nav">
     
-      <a href="/2020/08/07/Linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="article-nav-link">
+      <a href="/2020/08/09/Pytorch%E5%AD%A6%E4%B9%A0/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            Linux常用指令
+            Pytorch学习
           
         </div>
       </a>
     
     
-      <a href="/2020/08/06/%E5%B8%B8%E7%94%A8%E7%AE%80%E7%A7%B0/" class="article-nav-link">
+      <a href="/2020/07/31/TCGA%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">常用简称</div>
+        <div class="article-nav-title">TCGA数据类型</div>
       </a>
     
   </nav>
@@ -237,8 +210,8 @@
 <script>
   new Valine({
     el: "#vcomments",
-    app_id: "",
-    app_key: "",
+    app_id: "KdFTjT6PxV9PdyGrhRMQKb2p-gzGzoHsz",
+    app_key: "FNPOjiTfCFihkWG7AV7kSrsV",
     path: window.location.pathname,
     avatar: "monsterid",
     placeholder: "给我的文章加点评论吧~",
@@ -319,8 +292,6 @@
       <li>
         <!-- cnzz统计 -->
         
-        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
-        
       </li>
     </ul>
   </div>
@@ -363,10 +334,6 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
-    </li>
-    
-    <li class="nav-item">
       <a class="nav-item-link" href="https://tuchong.com/4793196" target="_blank" rel="noopener">摄影</a>
     </li>
     
@@ -384,10 +351,6 @@
         <i class="ri-search-line"></i>
       </a>
       
-      
-      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-        <i class="ri-rss-line"></i>
-      </a>
       
     </li>
   </ul>
@@ -568,6 +531,30 @@
 
 <!-- MathJax -->
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true
+  }
+</script>
+
 <!-- Katex -->
 
 <!-- busuanzi  -->
@@ -644,6 +631,10 @@
 
 
 <!-- CanvasBackground -->
+
+
+<script src="/js/dz.js"></script>
+
 
 
     
