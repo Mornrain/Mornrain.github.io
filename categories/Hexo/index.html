@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    R语言数据处理 |  Hexo
+    Hexo |  Hexo
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -44,253 +44,56 @@
       
     <main class="content on">
       <section class="outer">
-  <article
-  id="post-数据处理"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
+  <article class="articles">
     
-    <header class="article-header">
+    
+    <h1 class="page-type-title">Hexo</h1>
+    
+    
+  
+  
+  
+  
+  
+  
+  <div class="archives-wrap">
+    <div class="archive-year-wrap">
+      <a href="/archives/2020" class="archive-year">2020</a>
+    </div>
+    <div class="archives">
+      
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2020/08/09/%E7%BD%91%E7%AB%99%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2%E5%92%8C%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="archive-article-date">
+  <time datetime="2020-08-09T11:15:49.000Z" itemprop="datePublished">08/09</time>
+</a>
        
-<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  R语言数据处理
-</h1>
+<h2 itemprop="name">
+  <a class="archive-article-title" href="/2020/08/09/%E7%BD%91%E7%AB%99%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2%E5%92%8C%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"
+    >网站分类页面和标签页面不显示的解决办法</a> 
+</h2>
  
 
     </header>
-     
-    <div class="article-meta">
-      <a href="/2020/08/09/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" class="article-date">
-  <time datetime="2020-08-09T10:23:29.000Z" itemprop="datePublished">2020-08-09</time>
-</a> 
+    
+      
   <div class="article-category">
-    <a class="article-category-link" href="/categories/R/">R</a>
-  </div>
-  
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">455</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
-        </span>
-    </span>
-</div>
- 
-    </div>
-      
-    <div class="tocbot"></div>
-
-
-
-
-  
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h4 id="R数据处理"><a href="#R数据处理" class="headerlink" title="R数据处理"></a>R数据处理</h4><h5 id="基本操作（默认读取到的数据以data命名）："><a href="#基本操作（默认读取到的数据以data命名）：" class="headerlink" title="基本操作（默认读取到的数据以data命名）："></a>基本操作（默认读取到的数据以data命名）：</h5><ul>
-<li><p>names(data):    查看数据的列名</p>
-</li>
-<li><p>dim(data):    查看行数、列数</p>
-</li>
-<li><p>sum(is.na(data)):    查看缺失值总数</p>
-</li>
-</ul>
-<a id="more"></a>
-
-<h5 id="降维方法："><a href="#降维方法：" class="headerlink" title="降维方法："></a>降维方法：</h5><h6 id="1-线性方法：常用于保留数据的整体结构"><a href="#1-线性方法：常用于保留数据的整体结构" class="headerlink" title="1.    线性方法：常用于保留数据的整体结构"></a>1.    线性方法：常用于保留数据的整体结构</h6><p>1.1    主成分分析(Principal Component Analysis, PCA):</p>
-<p>R语言做PCA分析有 princomp 和 pricomp 函数可以调用,不同的函数需要的数据格式也不相同。<strong>pricomp</strong>函数只能针对<strong>全数据模型</strong>有效。</p>
-<table>
-<thead>
-<tr>
-<th>二者不同点</th>
-<th align="center">princomp</th>
-<th>prcomp</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>mode</td>
-<td align="center">R-mode</td>
-<td>Q-mode</td>
-</tr>
-<tr>
-<td>基于算法</td>
-<td align="center">基于协方差或者相关矩阵提取的特征值</td>
-<td>基于奇异值分解</td>
-</tr>
-</tbody></table>
-<p>R-mode简单来说就是数据数量要大于变量（因素）数量；而Q-mode正与其相反，简单来讲就是变量数量要多于数据数量。</p>
-<p>1.2    对应分析(Correspondence Analysis, CA)</p>
-<p>1.3    多重对应分析(Multiple Correspondence Analysis, MCA)</p>
-<p>1.4    经典多维尺度分析(classical multidimensional scaling, cMDS)也被称为主坐标分析(Principal Coordinate Analysis, PCoA) </p>
-<h6 id="2-非线性方法：更适合表达数据局部的相互作用关系"><a href="#2-非线性方法：更适合表达数据局部的相互作用关系" class="headerlink" title="2.    非线性方法：更适合表达数据局部的相互作用关系"></a>2.    非线性方法：更适合表达数据局部的相互作用关系</h6><p>2.1    核主成分分析(Kernel Principal Component Analysis, Kernel PCA)</p>
-<p>2.2    非度量多维尺度分析(Nonmetric Multidimensional Scaling, NMDS)</p>
-<p>2.3    等度量映射(Isomap)</p>
-<p>2.4    扩散映射(Diffusion Maps)</p>
-<p>2.5    一些包括t分布随机嵌入(t-Distributed Stochastic Neighbor Embedding, t-SNE)在内的邻近嵌入技术</p>
-<h6 id="3-监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）"><a href="#3-监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）" class="headerlink" title="3.    监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）"></a>3.    监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）</h6><p>3.1    偏最小二乘法(Partial Least Squares, PLS)</p>
-<p>3.2    线性判别分析(Linear Discriminant Analysis, LDA)</p>
-<p>3.3    近邻成分分析(Neighborhood Component Analysis)</p>
-<p>3.4    Bottleneck神经网络分类器</p>
- 
-      <!-- reward -->
-      
-      <div id="reward-btn">
-        Donate
-      </div>
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <div class="declare">
-      <ul class="post-copyright">
-        <li>
-          <i class="ri-copyright-line"></i>
-          <strong>Copyright： </strong>
-          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
-        </li>
-      </ul>
-    </div>
-    
-    <footer class="article-footer">
-       
-<div class="share-btn">
-      <span class="share-sns share-outer">
-        <i class="ri-share-forward-line"></i>
-        分享
-      </span>
-      <div class="share-wrap">
-        <i class="arrow"></i>
-        <div class="share-icons">
-          
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="ri-weibo-fill"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="ri-wechat-fill"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="ri-qq-fill"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="ri-douban-line"></i>
-          </a>
-          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a> -->
-          
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="ri-facebook-circle-fill"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="ri-twitter-fill"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="ri-google-fill"></i>
-          </a>
-        </div>
-      </div>
-</div>
-
-<div class="wx-share-modal">
-    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://mornrain.github.io/2020/08/09/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/" rel="tag">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E4%BF%A1/" rel="tag">生信</a></li></ul>
-
-    </footer>
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
   </div>
 
-   
-  <nav class="article-nav">
-    
-      <a href="/2020/08/09/%E7%BD%91%E7%AB%99%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2%E5%92%8C%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            网站分类页面和标签页面不显示的解决办法
-          
-        </div>
-      </a>
     
     
-      <a href="/2020/08/09/%E7%AE%97%E6%B3%95/" class="article-nav-link">
-        <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">算法</div>
-      </a>
-    
-  </nav>
-
-   
-<!-- valine评论 -->
-<div id="vcomments-box">
-  <div id="vcomments"></div>
-</div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
-<script>
-  new Valine({
-    el: "#vcomments",
-    app_id: "KdFTjT6PxV9PdyGrhRMQKb2p-gzGzoHsz",
-    app_key: "FNPOjiTfCFihkWG7AV7kSrsV",
-    path: window.location.pathname,
-    avatar: "monsterid",
-    placeholder: "给我的文章加点评论吧~",
-    recordIP: true,
-  });
-  const infoEle = document.querySelector("#vcomments .info");
-  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
-    infoEle.childNodes.forEach(function (item) {
-      item.parentNode.removeChild(item);
-    });
-  }
-</script>
-<style>
-  #vcomments-box {
-    padding: 5px 30px;
-  }
-
-  @media screen and (max-width: 800px) {
-    #vcomments-box {
-      padding: 5px 0px;
-    }
-  }
-
-  #vcomments-box #vcomments {
-    background-color: #fff;
-  }
-
-  .v .vlist .vcard .vh {
-    padding-right: 20px;
-  }
-
-  .v .vlist .vcard {
-    padding-left: 10px;
-  }
-</style>
-
- 
-     
+  </div>
 </article>
+      
+      
+    </div>
+  </div>
+  
+  
 
+  
 </section>
       <footer class="footer">
   <div class="outer">
@@ -435,23 +238,6 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
-
-
-<script src="/js/tocbot.min.js"></script>
-
-<script>
-  tocbot.init({
-    tocSelector: '.tocbot',
-    contentSelector: '.article-entry',
-    headingSelector: 'h1, h2, h3, h4, h5, h6',
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    scrollContainer: 'main',
-    positionFixedSelector: '.tocbot',
-    positionFixedClass: 'is-position-fixed',
-    fixedSidebarOffset: 'auto'
-  });
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
