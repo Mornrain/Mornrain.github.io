@@ -7,12 +7,14 @@
 <h5 id="Pycharm-pytorch安装使用"><a href="#Pycharm-pytorch安装使用" class="headerlink" title="Pycharm + pytorch安装使用"></a>Pycharm + pytorch安装使用</h5><h5 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h5><p>cmd中</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">activate tfenv  <span class="comment"># 后面环境名称根据自己定义的来改，tfenv是我定义的名称</span></span><br></pre></td></tr></table></figure>
 
+<p>（未完不一定待续…）</p>
 ]]></content>
       <categories>
         <category>深度学习</category>
       </categories>
       <tags>
         <tag>深度学习</tag>
+        <tag>环境搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -62,7 +64,7 @@
   </entry>
   <entry>
     <title>MySQL数据库操作</title>
-    <url>/2020/07/28/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</url>
+    <url>/2020/08/12/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h1 id="MySQL数据库操作"><a href="#MySQL数据库操作" class="headerlink" title="MySQL数据库操作"></a>MySQL数据库操作</h1><h5 id="一-将EXCEL表中的数据导入MySQL数据库中"><a href="#一-将EXCEL表中的数据导入MySQL数据库中" class="headerlink" title="一.  将EXCEL表中的数据导入MySQL数据库中"></a>一.  将EXCEL表中的数据导入MySQL数据库中</h5><ol>
 <li><p>将EXCEL中的数据另存为制表符分隔的文本文件</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mornrain/CDN/images/1.jpg" alt="示例1"></p>
@@ -79,16 +81,25 @@
 <li>完成</li>
 </ol>
 ]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>MySQL</tag>
+      </tags>
   </entry>
   <entry>
     <title>TCGA数据类型</title>
-    <url>/2020/07/31/TCGA%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<h5 id="TCGA数据类型"><a href="#TCGA数据类型" class="headerlink" title="TCGA数据类型"></a>TCGA数据类型</h5><h6 id="1-临床数据"><a href="#1-临床数据" class="headerlink" title="1. 临床数据"></a>1. 临床数据</h6><p>存储方式为XML格式。</p>
+    <url>/2020/08/07/TCGA%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<h4 id="TCGA数据类型"><a href="#TCGA数据类型" class="headerlink" title="TCGA数据类型"></a>TCGA数据类型</h4><h6 id="1-临床数据"><a href="#1-临床数据" class="headerlink" title="1. 临床数据"></a>1. 临床数据</h6><p>存储方式为XML格式。</p>
 <h6 id="2-表达数据"><a href="#2-表达数据" class="headerlink" title="2. 表达数据"></a>2. 表达数据</h6><p>表单数据分三种（FPKM、FPKM-UQ、counts）,表达数据的格式为首列为基因id，第二列为表达值。</p>
+<a id="more"></a>
+
 <h6 id="3-甲基化数据"><a href="#3-甲基化数据" class="headerlink" title="3. 甲基化数据"></a>3. 甲基化数据</h6><p>甲基化原始数据包含11列信息，第一列为甲基化位点id，第二列为beta value（甲基化程度），第3列至第11列均为该位点的注释信息。</p>
 <h6 id="4-microRNA数据"><a href="#4-microRNA数据" class="headerlink" title="4.microRNA数据"></a>4.microRNA数据</h6><p>microRNA表达原始数据分为4列，第1列为miRNA id，第2列和第3列分别表示为原始数据和标准化后的reads个数。第4列表示为该miRNA在比对时是否为交叉比对。</p>
 <h6 id="5-SNP数据"><a href="#5-SNP数据" class="headerlink" title="5.SNP数据"></a>5.SNP数据</h6><p>SNV数据并不是按照不同样本分开存放，整张表格记录了该种疾病所有成对样本经计算后得到的SNV信息。</p>
-<h5 id="TCGA数据库中英文对照表"><a href="#TCGA数据库中英文对照表" class="headerlink" title="TCGA数据库中英文对照表"></a>TCGA数据库中英文对照表</h5><table>
+<h4 id="TCGA数据库中英文对照表"><a href="#TCGA数据库中英文对照表" class="headerlink" title="TCGA数据库中英文对照表"></a>TCGA数据库中英文对照表</h4><table>
 <thead>
 <tr>
 <th>TCGA-LAML</th>
@@ -263,17 +274,20 @@
 </tr>
 </tbody></table>
 ]]></content>
+      <categories>
+        <category>生信</category>
+      </categories>
+      <tags>
+        <tag>生信</tag>
+        <tag>TCGA</tag>
+        <tag>数据类型</tag>
+        <tag>癌症中英对照</tag>
+      </tags>
   </entry>
   <entry>
     <title>生信知识</title>
     <url>/2020/08/09/%E5%B8%B8%E7%94%A8%E7%AE%80%E7%A7%B0/</url>
-    <content><![CDATA[<h4 id="常用简称"><a href="#常用简称" class="headerlink" title="常用简称"></a>常用简称</h4><h5 id="一-数据分析-降维方法"><a href="#一-数据分析-降维方法" class="headerlink" title="一. 数据分析-降维方法"></a>一. 数据分析-降维方法</h5><h6 id="1-1-保留数据的整体结构的线性方法"><a href="#1-1-保留数据的整体结构的线性方法" class="headerlink" title="1.1 保留数据的整体结构的线性方法"></a>1.1 保留数据的整体结构的线性方法</h6><ul>
-<li>PCA：Principal Component Analysis    主成分分析</li>
-<li>CA</li>
-<li>MCA</li>
-<li>cMDS</li>
-</ul>
-<h5 id="生物信息学"><a href="#生物信息学" class="headerlink" title="生物信息学"></a>生物信息学</h5><ul>
+    <content><![CDATA[<h4 id="常用简称"><a href="#常用简称" class="headerlink" title="常用简称"></a>常用简称</h4><h5 id="生物信息学"><a href="#生物信息学" class="headerlink" title="生物信息学"></a>生物信息学</h5><ul>
 <li><p>CNV：    copy number variation        拷贝数变异</p>
 </li>
 <li><p>SNP：    Single Nucleotide Polymorphism        单核苷酸多态性</p>
@@ -283,13 +297,13 @@
 <li><p>READ:        Rectum adenocarcinoa        直肠癌</p>
 </li>
 </ul>
-]]></content>
+<a id="more"></a>]]></content>
       <categories>
         <category>生信</category>
       </categories>
       <tags>
         <tag>生信</tag>
-        <tag>基本知识</tag>
+        <tag>基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -342,19 +356,7 @@
       </categories>
       <tags>
         <tag>Linux</tag>
-        <tag>指令</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>网站分类页面和标签页面不显示的解决办法</title>
-    <url>/2020/08/09/%E7%BD%91%E7%AB%99%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2%E5%92%8C%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2%E4%B8%8D%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
-    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/mornrain/CDN/images/truble1.jpg" alt="分类页面"></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
+        <tag>指令集</tag>
       </tags>
   </entry>
   <entry>
@@ -435,8 +437,8 @@
         <category>R</category>
       </categories>
       <tags>
-        <tag>生信</tag>
         <tag>R</tag>
+        <tag>数据处理</tag>
       </tags>
   </entry>
 </search>
