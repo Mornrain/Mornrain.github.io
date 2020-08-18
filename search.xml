@@ -1,65 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Windows深度学习网络搭建</title>
-    <url>/2020/07/25/Windows%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<h5 id="基于Win10-1660s-构建深度学习环境"><a href="#基于Win10-1660s-构建深度学习环境" class="headerlink" title="基于Win10 + 1660s 构建深度学习环境"></a>基于Win10 + 1660s 构建深度学习环境</h5><p>​    因学习需要，最近在自己的电脑上安装了深度学习环境</p>
-<h5 id="Pycharm-pytorch安装使用"><a href="#Pycharm-pytorch安装使用" class="headerlink" title="Pycharm + pytorch安装使用"></a>Pycharm + pytorch安装使用</h5><h5 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h5><p>cmd中</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">activate tfenv  <span class="comment"># 后面环境名称根据自己定义的来改，tfenv是我定义的名称</span></span><br></pre></td></tr></table></figure>
+    <title>Linux常用指令</title>
+    <url>/2020/08/09/Linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<h4 id="Linux常用指令"><a href="#Linux常用指令" class="headerlink" title="Linux常用指令"></a>Linux常用指令</h4><ul>
+<li>.zip 解压指令</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">jar xvf filename.zip</span><br></pre></td></tr></table></figure>
 
-<p>（未完不一定待续…）</p>
 ]]></content>
       <categories>
-        <category>深度学习</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>深度学习</tag>
-        <tag>环境搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>算法</title>
-    <url>/2020/08/09/%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><h5 id="岭回归（Ridge）"><a href="#岭回归（Ridge）" class="headerlink" title="岭回归（Ridge）"></a>岭回归（Ridge）</h5><h6 id="算法适用领域"><a href="#算法适用领域" class="headerlink" title="算法适用领域"></a>算法适用领域</h6><ul>
-<li><p>最先用来处理特征数多于样本数的情况</p>
-</li>
-<li><p>现也用于在估计中加入偏差，从而得到更好的估计</p>
-</li>
-</ul>
-<h6 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h6><ul>
-<li>这里通过引入$\lambda$ 限制了所有$\theta^2$之和，通过引入该惩罚项，减少不重要的参数（这个技术在统计学上也叫作缩减）</li>
-<li>为了防止过拟合（$\theta$过大），在目标函数$J(\theta)$后添加复杂度惩罚因子，即正则项来防止过拟合。</li>
-</ul>
-<a id="more"></a>
-
-<h5 id="简单的理解正则化："><a href="#简单的理解正则化：" class="headerlink" title="简单的理解正则化："></a>简单的理解正则化：</h5><ol>
-<li><p><strong>正则化的目的：防止过拟合</strong></p>
-<p>​        关于第1点，过拟合指的是给定一堆数据，这堆数据带有噪声，利用模型去拟合这堆数据，可能会把噪声数据也给拟合了，这点很致命，一方面会造成模型比较复杂，另一方面，模型的泛化性能太差了，遇到了新的数据让你测试，你所得到的过拟合的模型，正确率是很差的。</p>
-</li>
-<li><p><strong>正则化的本质：约束（限制）要优化的参数</strong></p>
-<p>​        关于第2点，本来解空间是全部区域，但通过正则化添加了一些约束，使得解空间变小了，甚至在个别正则化方式下，解变得稀疏了。</p>
-</li>
-</ol>
-<h5 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h5><ul>
-<li><p><em>L1-norm正则</em><br>$$<br>J\left ( \theta  \right )= \frac{1}{2}\sum_{i}^{m}\left ( y^{i} -\theta ^{T}x^{i}\right )^{2}+\lambda \sum_{j}^{n}\left | \theta _{j} \right |<br>$$</p>
-</li>
-<li><p><em>L2-norm正则</em></p>
-</li>
-</ul>
-<p>$$<br>J\left ( \theta  \right )= \frac{1}{2}\sum_{i}^{m}\left ( y^{i} -\theta ^{T}x^{i}\right )^{2}+\lambda \sum_{j}^{n} \theta _{j} ^{2}<br>$$</p>
-<ul>
-<li><em>结合L1-norm、L2-norm进行正则</em></li>
-</ul>
-<p>$$<br>J\left ( \theta  \right )= \frac{1}{2}\sum_{i}^{m}\left ( y^{i} -\theta ^{T}x^{i}\right )^{2}+\lambda(\rho\sum_{j}^{n}\left | \theta <em>{j} \right |+(1-\rho)\sum</em>{j}^{n} \theta _{j} ^{2})<br>$$</p>
-<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
-<li><a href="https://www.biaodianfu.com/ridge-lasso-elasticnet.html" target="_blank" rel="noopener">机器学习算法之岭回归、Lasso回归和ElasticNet回归</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
+        <tag>Linux</tag>
+        <tag>指令集</tag>
       </tags>
   </entry>
   <entry>
@@ -87,6 +42,123 @@
       <tags>
         <tag>数据库</tag>
         <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>R语言数据处理</title>
+    <url>/2020/08/09/R%20%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h4 id="R数据处理"><a href="#R数据处理" class="headerlink" title="R数据处理"></a>R数据处理</h4><h5 id="基本操作（默认读取到的数据以data命名）："><a href="#基本操作（默认读取到的数据以data命名）：" class="headerlink" title="基本操作（默认读取到的数据以data命名）："></a>基本操作（默认读取到的数据以data命名）：</h5><ul>
+<li><p>names(data):    查看数据的列名</p>
+</li>
+<li><p>dim(data):    查看行数、列数</p>
+</li>
+<li><p>sum(is.na(data)):    查看缺失值总数</p>
+</li>
+</ul>
+<a id="more"></a>
+
+<h5 id="循环读取、操作并保存数据文件"><a href="#循环读取、操作并保存数据文件" class="headerlink" title="循环读取、操作并保存数据文件"></a>循环读取、操作并保存数据文件</h5><ul>
+<li><p>利用<code>paste()</code>函数对字符串进行拼接，首先将所有文件名获取到一个表中，再利用for循环依次读取并执行想要的操作，示例是根据药物名读取药物的ic50数据并导入基因表达数据中</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">192</span>) &#123;</span><br><span class="line">  ic50_ &lt;-</span><br><span class="line">    read.csv(paste(<span class="string">"ic50/"</span>, drug_name$x[i], <span class="string">".csv"</span>, sep = <span class="string">""</span>), header = <span class="literal">T</span>)</span><br><span class="line">  cls$Cosmic.sample.Id = rownames(cls)</span><br><span class="line">  temp &lt;-</span><br><span class="line">    merge(cls,</span><br><span class="line">          ic50_,</span><br><span class="line">          by.x = <span class="string">'Cosmic.sample.Id'</span>,</span><br><span class="line">          by.y = <span class="string">'Cosmic.sample.Id'</span>,</span><br><span class="line">          all = <span class="literal">FALSE</span>)</span><br><span class="line">  temp &lt;- subset(temp, select = -Cosmic.sample.Id)</span><br><span class="line">  write.table(temp, paste(<span class="string">"cls/cls_"</span>, drug_name$x[i], <span class="string">".txt"</span>, sep = <span class="string">""</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h5 id="降维方法："><a href="#降维方法：" class="headerlink" title="降维方法："></a>降维方法：</h5><h6 id="1-线性方法：常用于保留数据的整体结构"><a href="#1-线性方法：常用于保留数据的整体结构" class="headerlink" title="1.    线性方法：常用于保留数据的整体结构"></a>1.    线性方法：常用于保留数据的整体结构</h6><p>1.1    主成分分析(Principal Component Analysis, PCA):</p>
+<p>R语言做PCA分析有 princomp 和 pricomp 函数可以调用,不同的函数需要的数据格式也不相同。<strong>pricomp</strong>函数只能针对<strong>全数据模型</strong>有效。</p>
+<table>
+<thead>
+<tr>
+<th>二者不同点</th>
+<th align="center">princomp</th>
+<th>prcomp</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>mode</td>
+<td align="center">R-mode</td>
+<td>Q-mode</td>
+</tr>
+<tr>
+<td>基于算法</td>
+<td align="center">基于协方差或者相关矩阵提取的特征值</td>
+<td>基于奇异值分解</td>
+</tr>
+</tbody></table>
+<p>R-mode简单来说就是数据数量要大于变量（因素）数量；而Q-mode正与其相反，简单来讲就是变量数量要多于数据数量。</p>
+<p>1.2    对应分析(Correspondence Analysis, CA)</p>
+<p>1.3    多重对应分析(Multiple Correspondence Analysis, MCA)</p>
+<p>1.4    经典多维尺度分析(classical multidimensional scaling, cMDS)也被称为主坐标分析(Principal Coordinate Analysis, PCoA) </p>
+<h6 id="2-非线性方法：更适合表达数据局部的相互作用关系"><a href="#2-非线性方法：更适合表达数据局部的相互作用关系" class="headerlink" title="2.    非线性方法：更适合表达数据局部的相互作用关系"></a>2.    非线性方法：更适合表达数据局部的相互作用关系</h6><p>2.1    核主成分分析(Kernel Principal Component Analysis, Kernel PCA)</p>
+<p>2.2    非度量多维尺度分析(Nonmetric Multidimensional Scaling, NMDS)</p>
+<p>2.3    等度量映射(Isomap)</p>
+<p>2.4    扩散映射(Diffusion Maps)</p>
+<p>2.5    一些包括t分布随机嵌入(t-Distributed Stochastic Neighbor Embedding, t-SNE)在内的邻近嵌入技术</p>
+<h6 id="3-监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）"><a href="#3-监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）" class="headerlink" title="3.    监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）"></a>3.    监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）</h6><p>3.1    偏最小二乘法(Partial Least Squares, PLS)</p>
+<p>3.2    线性判别分析(Linear Discriminant Analysis, LDA)</p>
+<p>3.3    近邻成分分析(Neighborhood Component Analysis)</p>
+<p>3.4    Bottleneck神经网络分类器</p>
+]]></content>
+      <categories>
+        <category>R</category>
+      </categories>
+      <tags>
+        <tag>数据处理</tag>
+        <tag>R</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows深度学习网络搭建</title>
+    <url>/2020/07/25/Windows%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%BB%9C%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<h5 id="基于Win10-1660s-构建深度学习环境"><a href="#基于Win10-1660s-构建深度学习环境" class="headerlink" title="基于Win10 + 1660s 构建深度学习环境"></a>基于Win10 + 1660s 构建深度学习环境</h5><p>​    因学习需要，最近在自己的电脑上安装了深度学习环境</p>
+<h5 id="Pycharm-pytorch安装使用"><a href="#Pycharm-pytorch安装使用" class="headerlink" title="Pycharm + pytorch安装使用"></a>Pycharm + pytorch安装使用</h5><h5 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h5><p>cmd中</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">activate tfenv  <span class="comment"># 后面环境名称根据自己定义的来改，tfenv是我定义的名称</span></span><br></pre></td></tr></table></figure>
+
+<p>（未完不一定待续…）</p>
+]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>深度学习</tag>
+        <tag>环境搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Pytorch学习</title>
+    <url>/2020/08/09/Pytorch%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="Pytorch学习"><a href="#Pytorch学习" class="headerlink" title="Pytorch学习"></a>Pytorch学习</h1><h5 id="A-typical-training-procedure-for-a-neural-network-is-as-follows-神经网络的典型训练过程如下"><a href="#A-typical-training-procedure-for-a-neural-network-is-as-follows-神经网络的典型训练过程如下" class="headerlink" title="A typical training procedure for a neural network is as follows(神经网络的典型训练过程如下)"></a>A typical training procedure for a neural network is as follows(神经网络的典型训练过程如下)</h5><ul>
+<li>Define the neural network that has some learnable parameters (or weights)</li>
+<li>Iterate over a dataset of inputs</li>
+<li>Process input through the network</li>
+<li>Compute the loss (how far is the output from being correct)</li>
+<li>Propagate gradients back into the network’s parameters</li>
+<li>Update the weights of the network, typically using a simple update rule: <code>weight = weight - learning_rate * gradient</code></li>
+</ul>
+<a id="more"></a>
+
+<h5 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h5><ul>
+<li>.data:    获得该结点的值，即Tensor类型的值</li>
+<li>.grad:    获得该节点处的梯度信息</li>
+<li>grad_fn:    值可以得知该变量是不是一个函数的输出值。若是，则返回一个与该函数相关的对象，否则是None。</li>
+</ul>
+<h5 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h5><ul>
+<li>requires_grad:    有 True 和 Flase ，True代表此变量处需要计算梯度，Flase代表不需要；默认为Flase。</li>
+</ul>
+<h4 id="1、6种优化方法介绍"><a href="#1、6种优化方法介绍" class="headerlink" title="1、6种优化方法介绍"></a>1、6种优化方法介绍</h4><h5 id="1-1-SGD-stochastic-gradient-descent"><a href="#1-1-SGD-stochastic-gradient-descent" class="headerlink" title="1.1 SGD(stochastic gradient descent)"></a>1.1 SGD(stochastic gradient descent)</h5><h5 id="1-2-SGD-Momentum"><a href="#1-2-SGD-Momentum" class="headerlink" title="1.2 SGD+Momentum"></a>1.2 SGD+Momentum</h5><h5 id="1-3-Nesterov-Momentum"><a href="#1-3-Nesterov-Momentum" class="headerlink" title="1.3 Nesterov Momentum"></a>1.3 Nesterov Momentum</h5><h5 id="1-4-AdaGrad"><a href="#1-4-AdaGrad" class="headerlink" title="1.4 AdaGrad"></a>1.4 AdaGrad</h5><h5 id="1-5-RMSProp"><a href="#1-5-RMSProp" class="headerlink" title="1.5 RMSProp"></a>1.5 RMSProp</h5><h5 id="1-6Adam"><a href="#1-6Adam" class="headerlink" title="1.6Adam"></a>1.6Adam</h5><h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/62585696" target="_blank" rel="noopener">PyTorch学习之6种优化方法介绍</a></li>
+</ul>
+<h4 id="参考资料-1"><a href="#参考资料-1" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
+<li><a href="https://www.zhihu.com/people/lao-zhong-69-64/posts" target="_blank" rel="noopener">Pytorch基础教程之线性回归和逻辑回归（附源码）</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -285,6 +357,69 @@
       </tags>
   </entry>
   <entry>
+    <title>前端</title>
+    <url>/2020/08/15/%E5%89%8D%E7%AB%AF/</url>
+    <content><![CDATA[<h5 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h5><h6 id="页面载入："><a href="#页面载入：" class="headerlink" title="页面载入："></a>页面载入：</h6><p>​        代码在DOM加载完成时运行(JQuery)</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//在这里写你的代码...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>​        <em>缩写形式</em>：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//你可以在这里继续使用$作为别名...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>JQuery事件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法</title>
+    <url>/2020/08/09/%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><h5 id="岭回归（Ridge）"><a href="#岭回归（Ridge）" class="headerlink" title="岭回归（Ridge）"></a>岭回归（Ridge）</h5><h6 id="算法适用领域"><a href="#算法适用领域" class="headerlink" title="算法适用领域"></a>算法适用领域</h6><ul>
+<li><p>最先用来处理特征数多于样本数的情况</p>
+</li>
+<li><p>现也用于在估计中加入偏差，从而得到更好的估计</p>
+</li>
+</ul>
+<h6 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h6><ul>
+<li>这里通过引入$\lambda$ 限制了所有$\theta^2$之和，通过引入该惩罚项，减少不重要的参数（这个技术在统计学上也叫作缩减）</li>
+<li>为了防止过拟合（$\theta$过大），在目标函数$J(\theta)$后添加复杂度惩罚因子，即正则项来防止过拟合。</li>
+</ul>
+<a id="more"></a>
+
+<h5 id="简单的理解正则化："><a href="#简单的理解正则化：" class="headerlink" title="简单的理解正则化："></a>简单的理解正则化：</h5><ol>
+<li><p><strong>正则化的目的：防止过拟合</strong></p>
+<p>​        关于第1点，过拟合指的是给定一堆数据，这堆数据带有噪声，利用模型去拟合这堆数据，可能会把噪声数据也给拟合了，这点很致命，一方面会造成模型比较复杂，另一方面，模型的泛化性能太差了，遇到了新的数据让你测试，你所得到的过拟合的模型，正确率是很差的。</p>
+</li>
+<li><p><strong>正则化的本质：约束（限制）要优化的参数</strong></p>
+<p>​        关于第2点，本来解空间是全部区域，但通过正则化添加了一些约束，使得解空间变小了，甚至在个别正则化方式下，解变得稀疏了。</p>
+</li>
+</ol>
+<h5 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h5><ul>
+<li><p><em>L1-norm正则</em><br>$$<br>J\left ( \theta  \right )= \frac{1}{2}\sum_{i}^{m}\left ( y^{i} -\theta ^{T}x^{i}\right )^{2}+\lambda \sum_{j}^{n}\left | \theta _{j} \right |<br>$$</p>
+</li>
+<li><p><em>L2-norm正则</em></p>
+</li>
+</ul>
+<p>$$<br>J\left ( \theta  \right )= \frac{1}{2}\sum_{i}^{m}\left ( y^{i} -\theta ^{T}x^{i}\right )^{2}+\lambda \sum_{j}^{n} \theta _{j} ^{2}<br>$$</p>
+<ul>
+<li><em>结合L1-norm、L2-norm进行正则</em></li>
+</ul>
+<p>$$<br>J\left ( \theta  \right )= \frac{1}{2}\sum_{i}^{m}\left ( y^{i} -\theta ^{T}x^{i}\right )^{2}+\lambda(\rho\sum_{j}^{n}\left | \theta <em>{j} \right |+(1-\rho)\sum</em>{j}^{n} \theta _{j} ^{2})<br>$$</p>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
+<li><a href="https://www.biaodianfu.com/ridge-lasso-elasticnet.html" target="_blank" rel="noopener">机器学习算法之岭回归、Lasso回归和ElasticNet回归</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>生信知识</title>
     <url>/2020/08/09/%E5%B8%B8%E7%94%A8%E7%AE%80%E7%A7%B0/</url>
     <content><![CDATA[<h4 id="常用简称"><a href="#常用简称" class="headerlink" title="常用简称"></a>常用简称</h4><h5 id="生物信息学"><a href="#生物信息学" class="headerlink" title="生物信息学"></a>生物信息学</h5><ul>
@@ -304,141 +439,6 @@
       <tags>
         <tag>生信</tag>
         <tag>基础知识</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Pytorch学习</title>
-    <url>/2020/08/09/Pytorch%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="Pytorch学习"><a href="#Pytorch学习" class="headerlink" title="Pytorch学习"></a>Pytorch学习</h1><h5 id="A-typical-training-procedure-for-a-neural-network-is-as-follows-神经网络的典型训练过程如下"><a href="#A-typical-training-procedure-for-a-neural-network-is-as-follows-神经网络的典型训练过程如下" class="headerlink" title="A typical training procedure for a neural network is as follows(神经网络的典型训练过程如下)"></a>A typical training procedure for a neural network is as follows(神经网络的典型训练过程如下)</h5><ul>
-<li>Define the neural network that has some learnable parameters (or weights)</li>
-<li>Iterate over a dataset of inputs</li>
-<li>Process input through the network</li>
-<li>Compute the loss (how far is the output from being correct)</li>
-<li>Propagate gradients back into the network’s parameters</li>
-<li>Update the weights of the network, typically using a simple update rule: <code>weight = weight - learning_rate * gradient</code></li>
-</ul>
-<a id="more"></a>
-
-<h5 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h5><ul>
-<li>.data:    获得该结点的值，即Tensor类型的值</li>
-<li>.grad:    获得该节点处的梯度信息</li>
-<li>grad_fn:    值可以得知该变量是不是一个函数的输出值。若是，则返回一个与该函数相关的对象，否则是None。</li>
-</ul>
-<h5 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h5><ul>
-<li>requires_grad:    有 True 和 Flase ，True代表此变量处需要计算梯度，Flase代表不需要；默认为Flase。</li>
-</ul>
-<h4 id="1、6种优化方法介绍"><a href="#1、6种优化方法介绍" class="headerlink" title="1、6种优化方法介绍"></a>1、6种优化方法介绍</h4><h5 id="1-1-SGD-stochastic-gradient-descent"><a href="#1-1-SGD-stochastic-gradient-descent" class="headerlink" title="1.1 SGD(stochastic gradient descent)"></a>1.1 SGD(stochastic gradient descent)</h5><h5 id="1-2-SGD-Momentum"><a href="#1-2-SGD-Momentum" class="headerlink" title="1.2 SGD+Momentum"></a>1.2 SGD+Momentum</h5><h5 id="1-3-Nesterov-Momentum"><a href="#1-3-Nesterov-Momentum" class="headerlink" title="1.3 Nesterov Momentum"></a>1.3 Nesterov Momentum</h5><h5 id="1-4-AdaGrad"><a href="#1-4-AdaGrad" class="headerlink" title="1.4 AdaGrad"></a>1.4 AdaGrad</h5><h5 id="1-5-RMSProp"><a href="#1-5-RMSProp" class="headerlink" title="1.5 RMSProp"></a>1.5 RMSProp</h5><h5 id="1-6Adam"><a href="#1-6Adam" class="headerlink" title="1.6Adam"></a>1.6Adam</h5><h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/62585696" target="_blank" rel="noopener">PyTorch学习之6种优化方法介绍</a></li>
-</ul>
-<h4 id="参考资料-1"><a href="#参考资料-1" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
-<li><a href="https://www.zhihu.com/people/lao-zhong-69-64/posts" target="_blank" rel="noopener">Pytorch基础教程之线性回归和逻辑回归（附源码）</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>Pytorch</tag>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux常用指令</title>
-    <url>/2020/08/09/Linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</url>
-    <content><![CDATA[<h4 id="Linux常用指令"><a href="#Linux常用指令" class="headerlink" title="Linux常用指令"></a>Linux常用指令</h4><ul>
-<li>.zip 解压指令</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">jar xvf filename.zip</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>指令集</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>前端</title>
-    <url>/2020/08/15/%E5%89%8D%E7%AB%AF/</url>
-    <content><![CDATA[<h5 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h5><h6 id="页面载入："><a href="#页面载入：" class="headerlink" title="页面载入："></a>页面载入：</h6><p>​        代码在DOM加载完成时运行(JQuery)</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//在这里写你的代码...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>​        <em>缩写形式</em>：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//你可以在这里继续使用$作为别名...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>JQuery事件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>R语言数据处理</title>
-    <url>/2020/08/09/R%20%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h4 id="R数据处理"><a href="#R数据处理" class="headerlink" title="R数据处理"></a>R数据处理</h4><h5 id="基本操作（默认读取到的数据以data命名）："><a href="#基本操作（默认读取到的数据以data命名）：" class="headerlink" title="基本操作（默认读取到的数据以data命名）："></a>基本操作（默认读取到的数据以data命名）：</h5><ul>
-<li><p>names(data):    查看数据的列名</p>
-</li>
-<li><p>dim(data):    查看行数、列数</p>
-</li>
-<li><p>sum(is.na(data)):    查看缺失值总数</p>
-</li>
-</ul>
-<a id="more"></a>
-
-<h5 id="循环读取、操作并保存数据文件"><a href="#循环读取、操作并保存数据文件" class="headerlink" title="循环读取、操作并保存数据文件"></a>循环读取、操作并保存数据文件</h5><ul>
-<li><p>利用<code>paste()</code>函数对字符串进行拼接，首先将所有文件名获取到一个表中，再利用for循环依次读取并执行想要的操作，示例是根据药物名读取药物的ic50数据并导入基因表达数据中</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">192</span>) &#123;</span><br><span class="line">  ic50_ &lt;-</span><br><span class="line">    read.csv(paste(<span class="string">"ic50/"</span>, drug_name$x[i], <span class="string">".csv"</span>, sep = <span class="string">""</span>), header = <span class="literal">T</span>)</span><br><span class="line">  cls$Cosmic.sample.Id = rownames(cls)</span><br><span class="line">  temp &lt;-</span><br><span class="line">    merge(cls,</span><br><span class="line">          ic50_,</span><br><span class="line">          by.x = <span class="string">'Cosmic.sample.Id'</span>,</span><br><span class="line">          by.y = <span class="string">'Cosmic.sample.Id'</span>,</span><br><span class="line">          all = <span class="literal">FALSE</span>)</span><br><span class="line">  temp &lt;- subset(temp, select = -Cosmic.sample.Id)</span><br><span class="line">  write.table(temp, paste(<span class="string">"cls/cls_"</span>, drug_name$x[i], <span class="string">".txt"</span>, sep = <span class="string">""</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<h5 id="降维方法："><a href="#降维方法：" class="headerlink" title="降维方法："></a>降维方法：</h5><h6 id="1-线性方法：常用于保留数据的整体结构"><a href="#1-线性方法：常用于保留数据的整体结构" class="headerlink" title="1.    线性方法：常用于保留数据的整体结构"></a>1.    线性方法：常用于保留数据的整体结构</h6><p>1.1    主成分分析(Principal Component Analysis, PCA):</p>
-<p>R语言做PCA分析有 princomp 和 pricomp 函数可以调用,不同的函数需要的数据格式也不相同。<strong>pricomp</strong>函数只能针对<strong>全数据模型</strong>有效。</p>
-<table>
-<thead>
-<tr>
-<th>二者不同点</th>
-<th align="center">princomp</th>
-<th>prcomp</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>mode</td>
-<td align="center">R-mode</td>
-<td>Q-mode</td>
-</tr>
-<tr>
-<td>基于算法</td>
-<td align="center">基于协方差或者相关矩阵提取的特征值</td>
-<td>基于奇异值分解</td>
-</tr>
-</tbody></table>
-<p>R-mode简单来说就是数据数量要大于变量（因素）数量；而Q-mode正与其相反，简单来讲就是变量数量要多于数据数量。</p>
-<p>1.2    对应分析(Correspondence Analysis, CA)</p>
-<p>1.3    多重对应分析(Multiple Correspondence Analysis, MCA)</p>
-<p>1.4    经典多维尺度分析(classical multidimensional scaling, cMDS)也被称为主坐标分析(Principal Coordinate Analysis, PCoA) </p>
-<h6 id="2-非线性方法：更适合表达数据局部的相互作用关系"><a href="#2-非线性方法：更适合表达数据局部的相互作用关系" class="headerlink" title="2.    非线性方法：更适合表达数据局部的相互作用关系"></a>2.    非线性方法：更适合表达数据局部的相互作用关系</h6><p>2.1    核主成分分析(Kernel Principal Component Analysis, Kernel PCA)</p>
-<p>2.2    非度量多维尺度分析(Nonmetric Multidimensional Scaling, NMDS)</p>
-<p>2.3    等度量映射(Isomap)</p>
-<p>2.4    扩散映射(Diffusion Maps)</p>
-<p>2.5    一些包括t分布随机嵌入(t-Distributed Stochastic Neighbor Embedding, t-SNE)在内的邻近嵌入技术</p>
-<h6 id="3-监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）"><a href="#3-监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）" class="headerlink" title="3.    监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）"></a>3.    监督降维技术（如果你的观测值带有类别标签，并且你的目标是将观测值分类到已知的与其最匹配的类别中去时，则可以考虑）</h6><p>3.1    偏最小二乘法(Partial Least Squares, PLS)</p>
-<p>3.2    线性判别分析(Linear Discriminant Analysis, LDA)</p>
-<p>3.3    近邻成分分析(Neighborhood Component Analysis)</p>
-<p>3.4    Bottleneck神经网络分类器</p>
-]]></content>
-      <categories>
-        <category>R</category>
-      </categories>
-      <tags>
-        <tag>R</tag>
-        <tag>数据处理</tag>
       </tags>
   </entry>
 </search>
